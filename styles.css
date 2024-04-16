@@ -1,0 +1,1293 @@
+:root {
+    --gradient-fade: linear-gradient(transparent 80%, #7798AB 100%);
+    --gradient-1: radial-gradient(40% 40% at top left, #24c1ff, transparent);
+    --gradient-2: radial-gradient(40% 40%, #00cc66, transparent);
+    --gradient-3: radial-gradient(40% 40% at bottom right, #403d58, transparent);
+    --gradient-4: radial-gradient(40% 40% at center right, #ff8800, transparent);
+    --gradient-5: radial-gradient(40% 40% at center left, #fcea53, transparent);
+    --mask-1: radial-gradient(30% 20% at 25% 50%, black, transparent);
+    --mask-2: radial-gradient(40% 40% at bottom right, black, transparent);
+    --mask-3: radial-gradient(10% 15% at 18% 42%, black, transparent);
+    --mask-4: var(--gradient-4);
+    --mask-5: radial-gradient(50% 40% at 20% 20%, black, transparent);
+    --mask-6: var(--gradient-5);
+    --mask-set: var(--mask-1), var(--mask-2), var(--mask-3), var(--mask-4), var(--mask-5), var(--mask-6);
+    --test-var: #00ffff;
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+html {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 100%;
+    overflow-x: hidden !important;
+}
+
+html,body {
+    scroll-behavior: smooth !important;
+}
+
+html:focus-within {
+    scroll-behavior: smooth !important;
+}
+
+body {
+    background: #8ACDEA;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-left: 15%;
+    padding-right: 15%;
+    box-shadow: 0px -2px 8px rgb(0 0 0 / 0.4);
+    overflow-x: hidden !important;
+    z-index: -1;
+    color: black;
+    }
+
+.gradient {
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    left:0;
+    background-image: var(--gradient-fade), var(--gradient-1), var(--gradient-2), var(--gradient-3), var(--gradient-4), var(--gradient-5);
+    mask-image: var(--mask-set);
+    -webkit-mask-image: var(--mask-set);
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto !important;
+	}
+}
+
+/* ------------ SCROLL ANIMATIONS ------------------ */
+
+/* -- FUTURE USE 
+.fade {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(50%);
+    transition: 1s;
+}
+
+.fade.appear {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+*/
+
+/* ------------ DIALOG POPUP ------------------ */
+
+/* dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 800px;
+    z-index: 1001;
+    transition: 0.5s;
+    border-radius: 25px;
+    border: none;
+    margin: 0;
+    background-size: 200% auto;
+    background: linear-gradient( to top, #990913 -20%, #014f41 100%);
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-size: 25px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.4);
+    color: white;
+}
+
+.cancelBtn {
+    border: none;
+    background: none;
+} */
+
+/* .confirmbutton {
+    display: none;
+    border: none;
+    border-radius: 10px;
+    background: white;
+    font-family: 'Montserrat', sans-serif;
+    width: 100px;
+    height: 25px;
+    font-size: 15px;
+} */
+
+/* .dlg-btn i {
+    display: flex;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    font-size: 18px;
+    color: white !important;
+}
+
+.holiday {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0 0 0;
+}
+
+.holiday h1 {
+    text-align: center;
+    text-transform: none;
+    padding: 25px 0 15px 0;
+}
+
+.holiday p {
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 25px 0;
+}
+
+.dealend {
+    text-align: center;
+    padding: 0;
+}
+
+.dealend h2 {
+    text-align: center;
+    font-size: 2rem;
+    padding: 0;
+}
+
+.dealend p {
+    padding: 0;
+}
+
+.countdown {
+    display: flex;
+    padding: 30px 0 0 0;
+    text-align: center;
+}
+
+.countdown div {
+    flex-basis: 200px;
+}
+
+.countdown div p {
+    font-size: 4rem;
+    font-weight: 900;
+    margin-bottom: 0px;
+    border-radius: 25px;
+    color: #990913;
+}
+
+.numbers {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 25px;
+    margin: 0 10px;
+}
+
+.numbers span {
+    color: #014f41;
+}
+
+.dealend img {
+    width: 97%;
+    height: auto;
+    margin-top: -21px;
+}
+
+.book p {
+    padding: 30px 0 20px 0;
+}
+
+.button-modal {
+    display: flex;
+    justify-content: center;
+}
+
+.mbtn {
+    margin: 0;
+    background-size: 200% auto;
+    background: #014f41;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    color: aliceblue;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 10px;
+    height: 5rem;
+    width: 22rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: 0.5s;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.4);
+}
+
+.mbtn:hover {
+    background-position: left center;
+    color: rgb(0 0 0 / 0.8);
+} */
+
+/* dialog form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px;
+    color: white;
+}
+
+form input {
+    height: 25px;
+    width: 100%;
+} */
+
+/* ------------ LOGO HEADER ------------ */
+
+#home {
+    display: inline-flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+
+.logo.header {
+    display: block;
+    text-align: center;
+    z-index: 1;
+    position: relative;
+    padding: 50px 0px 20px 0;
+}
+
+.logo.header img {
+    /* width: 15vw; */
+    width: 16vw;
+    height: auto;
+}
+
+/* .boat-header {
+    display: flex;
+    align-items: center;
+    padding: 50px 0 20px 0;
+}
+
+.boat-header img {
+    width: 30vw;
+    height: 14vw;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.4);
+} */
+
+/* ------------ NAVBAR ------------ */
+
+
+nav {
+    background-color: transparent;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    z-index: 1000;
+    position: fixed;
+    padding: 0 15% 0 15%;
+    left: 0;
+    right: 0;
+    transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
+}
+
+nav.scrolled  {
+    background-color: rgb(0 0 0 / 0.8);
+    color: white;
+}
+
+.brand-title h4 {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 1.7rem;
+    font-family: 'Schoolbell', cursive;
+    align-items: center;
+    line-height: 30px;
+    vertical-align: baseline;
+}
+
+.navlinks ul li {
+    display: inline-block;
+    justify-content: space-between;
+    list-style-type: none;
+    padding: 10px 0 10px 40px;
+    position: relative;
+} 
+
+.navlinks ul li::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background-color: aliceblue;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+nav.scrolled ul li:after {
+    background-color: #8ACDEA;
+}
+.navlinks ul li:hover::after {
+    width: 100%;
+}
+
+.navlinks li a {
+    color: black;
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.5s ease-in-out;
+}
+
+nav.scrolled li a {
+    color: white;
+}
+
+.burger {
+    display: none;
+}
+
+.x {
+    display: none;
+}
+
+/* ------------ SECTION 1 ------------ */
+
+
+.sec1 {
+    display: flex;
+    position: relative;
+    justify-content: space-around;
+    padding: 15px 0 15px 0;
+}
+
+.sec1-text h1 {
+    font-family: 'Schoolbell', cursive;
+    text-transform: uppercase;
+}
+
+.boat {
+    width: 31vw;
+    height: auto !important;
+    display: flex;
+    border-radius: 25px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.4);
+}
+
+.sec1-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding-left: 15px;
+}
+
+.text-box {
+    display: inline-block;
+    padding: 5px 0 5px 0;
+    font-size: 1.2rem;
+}
+
+.text-box h1 {
+    font-size: 2.5rem;
+    font-family: 'Schoolbell', cursive;
+}
+
+.sec1-text h1 {
+    font-size: 2.5rem;
+}
+
+.sec1-text p {
+    font-size: 1rem;
+}
+
+/* ------------ SECTION 2 ------------ */
+
+.sec2 {
+    display: flex;
+    position: relative;
+    justify-content: space-around;
+    padding: 15px 0 15px 0;
+}
+
+/* ------------ IMAGE SLIDER ----------- */
+
+.image-slider {
+    width: 31vw;
+    height: auto;
+    border-radius: 25px;
+    background-color: rgb(0 0 0 / 0.4);
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.swiper {
+    width: 80%;
+    height: fit-content;
+}
+
+.swiper-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.swiper-slide img {
+    width: 100%;
+    border-radius: 25px;
+}
+
+.boat2 {
+    width: 31vw;
+    height: auto !important;
+    display: flex;
+    border-radius: 25px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.4);
+}
+
+.boat2mobile {
+    display: none;
+    border-radius: 25px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.4);
+}
+
+.sec2-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding-right: 15px;
+}
+
+.sec2-text h1 {
+    font-size: 2.5rem;
+    font-family: 'Schoolbell', cursive;
+    text-transform: uppercase;
+}
+
+.sec2-text p {
+    font-size: 1rem;
+}
+
+/* ------------ CRUISES ------------ */
+
+.section-title {
+    font-size: 3.5rem;
+    font-family: 'Schoolbell', cursive;
+    display: flex;
+    justify-content: center;
+    padding: 30px 0 30px 0;
+    flex-direction: column;
+}
+
+.section-title h1 {
+    text-align: center;
+}
+
+.section-title h2 {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.underline {
+    background-color: black;
+    width: 100%;
+    height: 8px;
+}
+
+.cruise-col {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    justify-content: space-around;
+    padding: 15px 0 15px 0;
+}
+
+.cruise-col-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding-right: 15px;
+}
+
+.cruise-col-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding-right: 15px;
+}
+
+.family-pic {
+    width: 31vw;
+    height: auto !important;
+    display: flex;
+    border-radius: 25px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.4);
+}
+
+.family-pic-mobile {
+    display: none;
+    border-radius: 25px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.4);
+}
+
+
+.sunset {
+    width: 31vw;
+    height: auto !important;
+    display: flex;
+    border-radius: 25px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.4);
+}
+
+.drink {
+    width: 16vw;
+    height: auto !important;
+    display: flex;
+    border-radius: 25px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.4);
+}
+
+.drink-mobile {
+    display: none;
+    border-radius: 25px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.4);
+}
+
+.cruise-review {
+    display: flex;
+    padding: 20px 0;
+}
+
+.cruise-review {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.cruise-review .text-box {
+    padding-right: 25px;
+}
+
+.cruise {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 50px 0;
+}
+
+/* ------------ SPECIAL EVENTS ------------ */
+
+.specials-col {
+    display: flex;
+    padding: 15px 0 15px 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.specials-list {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+}
+
+.specials-list ul {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+}
+
+.specials-list ul li {
+    position: relative;
+    display: block;
+    color: #000000;
+    list-style: none;
+    margin: 25px 0;
+    transition: 0.5s;
+    cursor: pointer;
+    font-family: 'Schoolbell', cursive;
+    font-size: 2rem;
+    font-weight: 500;
+    text-align: center;
+    transition: 0.5s;
+}
+
+.specials-list ul li:hover {
+    color: white;
+}
+
+.specials-list ul li::after {
+    content: '';
+    width: 0%;
+    height: 3px;
+    background-color: #00ffff;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.specials-list ul li:hover::after {
+    width: 100%;
+}
+
+
+/* ------------ BOOKING ------------ */
+
+.button {
+    display: flex;
+    justify-content: center;
+    padding-top: 25px;
+}
+
+.button-2 {
+    display: flex;
+    justify-content: center;
+    padding-top: 25px;
+}
+
+.btn {
+    margin: 0;
+    background-size: 200% auto;
+    background: linear-gradient( to right, #f6bc00 51%, #ff8800 100%);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    color: aliceblue;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 10px;
+    height: 5rem;
+    width: 22rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: 0.5s;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.4);
+}
+
+.btn:hover {
+    background-position: right center;
+    color: rgb(0 0 0 / 0.8);
+}
+
+
+/* ------------ CONTACT & MAP ------------ */
+
+.contact-box {
+    padding-top: 30px;
+}
+
+.contact-col {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    justify-content: space-around;
+}
+
+.contact-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.contact-text h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 50px;
+    padding: 20px;
+}
+
+.links {
+    padding: 10px;
+}
+
+.links a {
+    font-size: 1.2rem;
+    text-decoration: none;
+    padding-left: 5px;
+    color: black;
+    transition: 0.5s;
+}
+
+.links a:link {
+    text-decoration: none;
+}
+.links a:visited {
+    text-decoration: none;
+}
+.links a:hover {
+    text-decoration: none;
+    color: #675cff;
+}
+.links a:active {
+    text-decoration: none;
+}
+
+.container-map {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.info p {
+    text-transform: uppercase;
+}
+
+.info {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.container-map iframe {
+    height: 35vh;
+    width: 30vw;
+    border-radius: 25px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.4);
+}
+
+/* -------- CANCELLATION POLICY ------------ */
+
+.cancel-box {
+    text-align: center;
+    background: #272727;
+    border-radius: 25px;
+    color: white;
+    margin: 25px 0 25px 0;
+}
+
+.cancel {
+    padding: 10px 25px 25px 25px;
+}
+
+.cancel h2 {
+    font-size: 1.5rem;
+}
+
+.cancel p {
+    font-size: 1rem;
+}
+
+
+/* TABLET */
+@media screen and (max-width: 1245px) {
+    body {
+        margin: 0;
+        padding: 0 5% 0 5%;
+    }
+
+    nav {
+        text-align: center;
+        padding: 0 5% 0 5%;
+    }
+
+    .brand-title {
+        margin: 5px;
+        font-size: 20px;
+    }
+
+    .navlinks li a {
+        letter-spacing: 3px;
+        font-size: 15px;
+    }
+
+    .contact-text h1 {
+        font-size: 3vw;
+    }
+
+    .links a {
+        font-size: 2vw;
+    }
+
+    .container-map iframe {
+        width: 40vw;
+        height: 30vw;
+    }
+
+    .info {
+        font-size: 2vw;
+    }
+
+    .holiday {
+        padding: 15px 0 0 0;
+    }
+
+    .countdown {
+        padding: 20px 0 0 0;
+    }
+}
+
+
+/* ------------ MOBILE PHONE & SMALL TABLET ------------ */
+
+
+
+@media screen and (max-width: 960px) {
+
+    html {
+        overflow-x: hidden !important;
+    }
+
+    nav  {
+        justify-content: space-evenly;
+    }
+
+    #home {
+        justify-content: center;
+    }
+
+    .logo.header img {
+        width: 30vw;
+        height: auto;
+        padding-top: 25px;
+    }
+
+    .boat-header img {
+        width: 40vw;
+        height: auto;
+    }
+
+    dialog {
+        width: 600px;
+        height: 600px;
+    }
+
+    .holiday h1 {
+        font-size: 2.5rem;
+        padding: 5px 0 10px 0;
+    }
+
+    .holiday p {
+        font-size: 1rem;
+        padding: 0 15px;
+    }
+
+    .dealend h2 {
+        font-size: 1.5rem;
+        padding: 15px 10px 0 10px;
+    }
+
+    .countdown {
+        justify-content: center;
+        margin: 0 5px;
+    }
+
+    .countdown div p {
+        font-size: 3rem;
+        border-radius: 10px;
+    }
+
+    .countdown div {
+        flex-basis: 150px;
+    }
+
+    .numbers {
+        margin: 0 5px;
+    }
+
+    .numbers span {
+        font-size: .8rem;
+    }
+
+    .dealend img {
+        width: 94%;
+        margin-top: -12px;
+    }
+
+    .book p {
+        font-size: 1.2rem;
+        padding: 15px 0;
+    }
+
+    .brand-title h4{
+        position: relative;
+        font-size: 4vw;
+        padding: 5px;
+    }
+
+
+    /*  ------------ NAVBAR ------------ */
+
+    .navlinks {
+        display: flex;
+        position: fixed;
+        inset: 0 0 0 50%;
+        background: hsl(0, 0%, 10%);
+        z-index: 999;
+        text-align: left;
+        transition: 0.5s ease-out;
+        transform: translateX(100%);
+    }
+
+    .navlinks[data-visible = "true"] {
+        transform: translateX(0%);
+    }
+
+    .navlinks li {
+        opacity: 0;
+    }
+
+    .navlinks ul {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        margin-top: 50px;
+        margin-left: 10px;
+    }
+
+    .navlinks ul li a {
+        color: white;
+    }
+
+
+    @supports ((-webkit-backdrop-filter: blur(1rem)) or (backdrop-filter: blur(1rem))) {
+        .navlinks {
+            background: hsla(0, 0%, 10%, 0.5);
+        -webkit-backdrop-filter: blur(1rem);
+                backdrop-filter: blur(1rem);
+        }
+    }
+
+    .navlinks ul {
+        padding: 6px;
+    }
+
+    .burger {
+        z-index: 9999;
+        display: flex;
+        color: black;
+        font-size: 2em;
+        cursor: pointer;
+        position: fixed;
+        height: 28px;
+        width: 28px;
+        top: 1.5rem;
+        right: 1.5rem;
+        align-items: center;
+        justify-content: space-around;
+        border-radius: 15%;
+        box-sizing: border-box;
+        background-color: #8ACDEA;
+        box-shadow: 0 3px 10px rgb(0 0 0 / 0.8);
+    }
+
+    .burger[aria-expanded = "true"] {
+        display: none;
+    }
+
+    .x[aria-expanded = "true"]{
+        z-index: 9999;
+        display: flex;
+        color: rgb(255, 255, 255);
+        font-size: 2em;
+        cursor: pointer;
+        position: fixed;
+        height: 28px;
+        width: 28px;
+        top: 1.5rem;
+        right: 1.5rem;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    @-webkit-keyframes navLinkFadein {
+        from {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0px);
+        }
+    }
+
+    @keyframes navLinkFadein {
+        from {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0px);
+        }
+    }
+
+    @-webkit-keyframes navLinkFadeOut {
+        from {
+            opacity: 1;
+            transform: translateX(0px);
+        }
+        to {
+            opacity: 0;
+            transform: translateX(5px);
+        }
+    }
+
+    @keyframes navLinkFadeOut {
+        from {
+            opacity: 1;
+            transform: translateX(0px);
+        }
+        to {
+            opacity: 0;
+            transform: translateX(5px);
+        }
+    }
+
+    /* ------------ SEC 1 ------------ */
+
+    .sec1 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .boat {
+        width: 75vw;
+        height: auto;
+        margin-bottom: 25px;
+    }
+
+    .sec1-text {
+        display: flex;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    .btn {
+        position: relative;
+        width: 65vw;
+        height: 15vw;
+        font-size: 3vw;
+    }
+    
+
+    /* ------------ SEC 2 ------------ */
+
+    .sec2 {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    .boat2 {
+        display: none;
+    }
+
+    .boat2mobile {
+        display: flex;
+        width: 75vw;
+        height: auto;
+        margin: 10px 0 25px 0;
+    }
+
+    .sec2 {
+        padding: 0;
+    }
+
+    .sec2-text {
+        padding: 0;
+        width: 100%;
+    }
+
+    /* ------------ CRUISES ------------ */
+
+    .section-title {
+        font-size: 6vw;
+        padding: 30px 0 30px 0;
+    }
+
+    .underline {
+        height: 1vw;
+    }
+
+    .cruise-col {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    .cruise-col-left {
+        padding: 0;
+    }
+
+    .cruise-col-right {
+        padding: 0;
+    }
+
+    .family-pic {
+        display: none;
+    }
+
+    .family-pic-mobile {
+        display: flex;
+        width: 75vw;
+        height: auto;
+        margin-bottom: 25px;
+    }
+
+    .text-box h1 {
+        font-size: 4vw;
+    }
+
+    .text-box p {
+        font-size: 2.5vw;
+    }
+
+    .sunset {
+        width: 75vw;
+        height: auto;
+        margin: 25px 0 25px 0;
+    }
+
+    .drink {
+        display: none;
+    }
+
+    .drink-mobile {
+        display: flex;
+        width: 40vw;
+        height: auto;
+        margin: 25px 0 25px 0;
+    }
+
+   
+    /* ------------ SPECIALS ------------ */
+
+    .specials-col{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .specials-list {
+        width: 50%;
+    }
+
+    .specials-list ul li {
+        font-size: 5vw;
+    }
+
+    /* ------------ CONTACT & MAP ------------ */
+
+    .contact-col {
+        flex-direction: column;
+    }
+
+    .container-map iframe {
+        width: 70vw;
+        height: 15vh;
+        border-radius: 25px;
+        box-shadow: 0 3px 10px rgb(0 0 0 / 0.4);
+    }
+
+    .contact-text {
+        padding-bottom: 25px;
+    }
+
+    .contact-text h1 {
+        font-size: 4vw;
+    }
+
+    .info {
+        font-size: 3vw;
+    }
+
+    .links a {
+        font-size: 3vw;
+    }
+
+    /* ------------ CANCEL ------------ */
+
+    .cancel h2 {
+        font-size: 5vw;
+        padding-bottom: 10px;
+    }
+
+    .cancel p {
+        font-size: 2.5vw;
+    }
+
+}
+
+@media screen and (max-width: 415px) {
+
+    .logo.header img {
+        width: 40vw;
+    }
+
+    .numbers {
+        margin: 0 1px;
+        border-radius: 10px;
+    }
+
+    .dealend img {
+        margin-top: -10px;
+    }
+
+    .book p {
+        padding: 10px 0 0 0;
+    }
+
+    .mbtn {
+        width: 15rem;
+    }
+
+    .brand-title h4{
+        font-size: 5vw;
+    }
+
+    .btn {
+        width: 80vw;
+        height: 15vw;
+        font-size: 4vw;
+    }
+
+    .section-title {
+        font-size: 8vw;
+    }
+
+    .text-box h1 {
+        font-size: 5vw;
+    }
+
+    .text-box p {
+        font-size: 3.5vw;
+    }
+
+    .specials-list {
+        width: 70%;
+    }
+
+    .specials-list ul li {
+        font-size: 6vw;
+    }
+
+    .container-map iframe {
+        width: 80vw;
+        height: 20vh;
+    }
+
+    .contact-text h1 {
+        font-size: 5.5vw;
+    }
+
+    .info {
+        font-size: 4.5vw;
+    }
+
+    .links a {
+        font-size: 4.5vw;
+    }
+}
